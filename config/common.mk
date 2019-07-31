@@ -26,8 +26,8 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 endif
 
-ifeq ($(TARGET_BUILD_VARIANT),eng)
-# Disable ADB authentication
+ifeq (filter $(TARGET_BUILD_VARIANT),eng userdebug)
+# Disable ADB authentication & enable by default
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
 else
 # Enable ADB authentication

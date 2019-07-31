@@ -22,6 +22,10 @@
     blurev=${rev}$(tput setaf 4)
     normal='tput sgr0'
 
+if [[ -n "$RR_BUILDTYPE" ]]; then
+   return 0
+fi
+
 echo -e ${ylw}"\n\n ▼ Which build-type do you want to choose?\n"${txtrst}
 echo -e "";
 echo -e ${blu}" 〉 1- Unofficial "${txtrst}${red}"  ︱ For the unofficial builds"${txtrst}
